@@ -13,19 +13,19 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Provider store={store}>
-                <HashRouter>
-                    <div>
-                        <MovieHeader />
-                        <Route exact path="/" render={()=><MovieList />}/>
-                        <Route path="/movielist" render={()=><MovieList />}/>
-                        <Route path="/movie/:movieId" render={()=><Movie />}/>
-                        <Route path="/signin" render={()=><Authentication />}/>
-                    </div>
-                </HashRouter>
-                </Provider>
-            </div>
-        );
+            <Provider store={store}>
+            <HashRouter>
+            <div>
+            <MovieHeader />
+            <Route exact path="/" render={()=><MovieList />}/>
+        <Route path="/movielist" render={()=><MovieList />}/>
+        <Route path="/movie/:movieTitle" render={()=><Movie />}/>
+        <Route path="/signin" render={()=><Authentication />}/>
+        </div>
+        </HashRouter>
+        </Provider>
+        </div>
+    );
     }
 }
 

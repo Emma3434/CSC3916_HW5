@@ -1,7 +1,13 @@
+/*
 import React, { Component } from 'react';
 import { submitLogin } from '../actions/authActions';
 import { connect } from 'react-redux';
 import { Col, Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
+
+//import Col from 'react-bootstrap/Col'
+//import Form from 'react-bootstrap/Form'
+//import Button from 'react-bootstrap/Button'
+//import Bootstrap from "react-bootstrap";
 
 class Login extends Component {
 
@@ -35,31 +41,31 @@ class Login extends Component {
     render(){
         return (
             <Form horizontal>
-                <FormGroup controlId="username">
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Username
-                    </Col>
-                    <Col sm={10}>
-                        <FormControl onChange={this.updateDetails} value={this.state.details.username} type="email" placeholder="Email" />
-                    </Col>
-                </FormGroup>
+        <FormGroup controlId="username">
+            <Col componentClass={ControlLabel} sm={2}>
+            Username
+            </Col>
+            <Col sm={10}>
+            <FormControl onChange={this.updateDetails} value={this.state.details.username} type="username" placeholder="Username" />
+            </Col>
+            </FormGroup>
 
-                <FormGroup controlId="password">
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Password
-                    </Col>
-                    <Col sm={10}>
-                        <FormControl onChange={this.updateDetails} value={this.state.details.password} type="password" placeholder="Password" />
-                    </Col>
-                </FormGroup>
+            <FormGroup controlId="password">
+            <Col componentClass={ControlLabel} sm={2}>
+            Password
+            </Col>
+            <Col sm={10}>
+            <FormControl onChange={this.updateDetails} value={this.state.details.password} type="password" placeholder="Password" />
+            </Col>
+            </FormGroup>
 
-                <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Button onClick={this.login}>Sign in</Button>
-                    </Col>
-                </FormGroup>
+            <FormGroup>
+            <Col smOffset={2} sm={10}>
+            <Button onClick={this.login}>Sign in</Button>
+            </Col>
+            </FormGroup>
             </Form>
-        )
+    )
     }
 }
 
@@ -69,3 +75,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Login);
+*/

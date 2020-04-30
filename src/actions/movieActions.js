@@ -51,29 +51,28 @@ export function fetchMovies(){
             .catch( (e) => console.log(e) );
     }
 }
-
-export function fetchMovie(movieId){
+//${title}?reviews=true
+//workkkkk
+export function fetchMovie(movieTitle){
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies/?reviews=true&movieId=${movieId}`, {
-
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token')
-                },
-                mode: 'cors'})
-                .then( (response) => {
-                    if (!response.ok) {
-                        throw Error(response.statusText);
-                    }
-                    return response.json();
-                })
-                .then( (res) => {
-                    dispatch(movieFetched(res.found));
-                })
-                .catch( (e) => console.log(e) );
-
+        return fetch(`${env.REACT_APP_API_URL}/movies/${movieTitle}`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            mode: 'cors'})
+            .then( (response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then( (res) => {
+                dispatch(movieFetched(res));
+            })
+            .catch( (e) => console.log(e) );
     }
 }
