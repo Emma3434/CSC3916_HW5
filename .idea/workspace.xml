@@ -115,6 +115,7 @@
     <option name="width" value="1932" />
     <option name="height" value="1092" />
   </component>
+  <component name="ProjectId" id="1bHDhjS4QopfpZhApRmiJ9ueHgj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -180,9 +181,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hw3" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="C:\Users\mark\WebstormProjects\react\hw5\node_modules\eslint" />
+    <property name="node.js.selected.package.eslint" value="C:/Users/mark/WebstormProjects/react/hw5/node_modules/eslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
