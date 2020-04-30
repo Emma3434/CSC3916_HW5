@@ -7,8 +7,6 @@ import { Carousel } from 'react-bootstrap'
 import { Glyphicon } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap';
 
-//require a callback function to be sent to MovieList to update the header subtitle
-
 class MovieList extends Component {
     constructor(props) {
         super(props);
@@ -31,7 +29,6 @@ class MovieList extends Component {
     }
 
     render() {
-
         const MovieListCarousel= ({movieList}) => {
             if (!movieList) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
@@ -48,14 +45,14 @@ class MovieList extends Component {
                             </div>
                             <Carousel.Caption>
                                 <h3>{movie.title}</h3>
-                                <Glyphicon glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.yearReleased}
+                                <Glyphicon glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.releaseDate}
                             </Carousel.Caption>
                         </Carousel.Item>)}
-                </Carousel>);
+                </Carousel>)
         }
 
         return (
-            <MovieListCarousel movieList={this.props.movies} />
+          <MovieListCarousel movieList={this.props.movies} />
         );
     }
 }
