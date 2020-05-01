@@ -9,7 +9,6 @@ import { submitReview } from "../actions/reviewActions";
 //support routing by creating a new component
 
 class Movie extends Component {
-
     constructor(props) {
         super(props);
         this.updateReviewDetails = this.updateReviewDetails.bind(this);
@@ -20,7 +19,7 @@ class Movie extends Component {
                 title: this.props.selectedMovie.title,
                 username: localStorage.getItem("username"),
                 comment: '',
-                rating:0
+                rating: 0
             }
         };
     }

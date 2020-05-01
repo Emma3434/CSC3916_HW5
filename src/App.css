@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #6e434b;
+  background-color: #c46c7d;
   height: 150px;
   padding: 20px;
   color: #ffd5dd;
@@ -27,10 +27,6 @@
   margin-left: 30%
 }
 
-.body
-{
-  background-color: #c8a9af;
-}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
