@@ -119,12 +119,12 @@ class Movie extends Component {
                         <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.averageRating} </h4></ListGroupItem>
                         <ListGroupItem>{currentMovie.title}</ListGroupItem>
                         <ListGroupItem>
-                            <h6>Leading Actors</h6>
+                            <h4>Leading Actors</h4>
                             <ActorInfo actors={currentMovie.actors} />
                         </ListGroupItem>
                     </ListGroup>
                     <Panel.Body>
-                        <h6>Reviews</h6>
+                        <h4>Reviews</h4>
                         <ReviewInfo reviews={currentMovie.reviews} />
                     </Panel.Body>
                 </Panel>
