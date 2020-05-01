@@ -16,14 +16,14 @@ class Movie extends Component {
     }
 
     render() {
-        const ActorInfo = ({Actors}) => {
-            return Actors.map((actor, i) =>
+        const ActorInfo = ({actors}) => {
+            return actors.map((actor, i) =>
                 <p key={i}>
-                    <b>{actor.Actor1.ActorName}</b> {actor.Actor1.CharacterName}
+                    <b>{actors.Actor1.ActorName}</b> {actors.Actor1.CharacterName}
                     <p></p>
-                    <b>{actor.Actor2.ActorName}</b> {actor.Actor2.CharacterName}
+                    <b>{actors.Actor2.ActorName}</b> {actors.Actor2.CharacterName}
                     <p></p>
-                    <b>{actor.Actor3.ActorName}</b> {actor.Actor3.CharacterName}
+                    <b>{actors.Actor3.ActorName}</b> {actors.Actor3.CharacterName}
                 </p>
             );
         };
