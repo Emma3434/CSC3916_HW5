@@ -28,11 +28,11 @@ class Movie extends Component {
             );
         };
 
-        const ReviewInfo = ({Reviews}) => {
-            return Reviews.map((review, i) =>
+        const ReviewInfo = ({reviews}) => {
+            return reviews.map((review, i) =>
                 <p key={i}>
-                    <b>{review.user}</b> {review.comment}
-                    <Glyphicon glyph={'star'} /> {review.rate}
+                    <b>{review.username}</b> {review.comment}
+                    <Glyphicon glyph={'star'} /> {review.rating}
                 </p>
             );
         }
