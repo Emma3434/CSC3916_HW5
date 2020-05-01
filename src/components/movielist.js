@@ -7,6 +7,8 @@ import { Carousel } from 'react-bootstrap'
 import { Glyphicon } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap';
 
+//require a callback function to be sent to MovieList to update the header subtitle
+
 class MovieList extends Component {
     constructor(props) {
         super(props);
@@ -29,6 +31,7 @@ class MovieList extends Component {
     }
 
     render() {
+
         const MovieListCarousel= ({movieList}) => {
             if (!movieList) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
@@ -37,22 +40,22 @@ class MovieList extends Component {
             return (
                 <Carousel onSelect={this.handleSelect}>
                     {movieList.map((movie) =>
-                        <Carousel.Item key={movie._id}>
-                            <div>
-                                <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
-                                    <Image className="image" src={movie.imageUrl} thumbnail />
-                                </LinkContainer>
-                            </div>
-                            <Carousel.Caption>
-                                <h3>{movie.title}</h3>
-                                <Glyphicon glyph={'star'} /> {movie.averageRating} &nbsp;&nbsp; {movie.year_released}
-                            </Carousel.Caption>
-                        </Carousel.Item>)}
-                </Carousel>)
+                    <Carousel.Item key={movie._id}>
+                        <div>
+                            <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
+                                <Image className="image" src={movie.imageUrl} thumbnail />
+                            </LinkContainer>
+                        </div>
+                        <Carousel.Caption>
+                            <h3>{movie.title}</h3>
+                            <Glyphicon glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.yearReleased}
+                        </Carousel.Caption>
+                    </Carousel.Item>)}
+            </Carousel>);
         }
 
         return (
-          <MovieListCarousel movieList={this.props.movies} />
+            <MovieListCarousel movieList={this.props.movies} />
         );
     }
 }
