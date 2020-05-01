@@ -73,21 +73,17 @@ class Movie extends Component {
             return (
                 <Form horizontal key="reviewForm">
                     <FormGroup controlId="rating" key="ratingFormGroup">
-                        <Col componentClass={ControlLabel} sm={4}>
-                            Rating (under 5)
-                        </Col>
-                        <Col sm={9}>
-                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.rating} type="Number" min="0" max="5" />
-                        </Col>
+                        <h5>Rating (Please enter a number between 0 and 5)</h5>
+                        <div>
+                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.rating} type="Number" />
+                        </div>
                     </FormGroup>
 
                     <FormGroup controlId="comment">
-                        <Col componentClass={ControlLabel} sm={4}>
-                            Comment
-                        </Col>
-                        <Col sm={9}>
+                        <h5>Comments</h5>
+                        <div>
                             <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.comment} type="text" placeholder="Leave your comments here..." />
-                        </Col>
+                        </div>
                     </FormGroup>
 
                     <FormGroup controlId="title">
