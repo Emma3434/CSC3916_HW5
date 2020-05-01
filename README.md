@@ -1,3 +1,14 @@
+CSCI3916 HW5
+===
+Zhiheng Wang
+
+109017691
+
+Heroku app link: https://zhihenghw5.herokuapp.com/#/
+
+Default information
+===
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
