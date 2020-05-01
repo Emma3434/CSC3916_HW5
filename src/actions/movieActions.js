@@ -34,8 +34,8 @@ export function fetchMovies() {
         return fetch(`${env.REACT_APP_API_URL}/movies?reviews=true`, {
             method: 'GET',
             headers: {
-                'Accept': 'application/x-www-form-urlencoded',
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             },
             mode: 'cors'})
@@ -58,8 +58,8 @@ export function fetchMovie(movieId){
         return fetch(`${env.REACT_APP_API_URL}/movies/${movieId}?reviews=true`, {
             method: 'GET',
             headers: {
-                'Accept': 'application/x-www-form-urlencoded',
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             },
             mode: 'cors'})

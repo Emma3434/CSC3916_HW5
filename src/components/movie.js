@@ -17,28 +17,30 @@ class Movie extends Component {
     }
 
     render() {
-        const ActorInfo = ({actors}) => {
-            return actors.map((actor, i) =>
-                <p key={i}>
-                    <b>{actor.actorName}</b> {actor.characterName}
-                </p>
-            )
-        }
 
-        const ReviewInfo = ({reviews}) => {
-            return reviews.map((review, i) =>
-                <p key={i}>
-                    <b>{review.username}</b> {review.comment}
-                    <Glyphicon glyph={'star'} /> {review.rating}
-                </p>
-            )
-        }
 
         const DetailInfo = ({currentMovie}) => {
             if (!currentMovie) { //if not could still be fetching the movie
                 return <div>Loading...</div>;
             }
+            const ActorInfo = ({actors}) => {
+                return actors.map((actor, i) =>
+                    <p key={i}>
+                        <b>{actor.actorName}</b> {actor.characterName}
+                    </p>
+                )
+            }
+
+            const ReviewInfo = ({reviews}) => {
+                return reviews.map((review, i) =>
+                    <p key={i}>
+                        <b>{review.username}</b> {review.comment}
+                        <Glyphicon glyph={'star'} /> {review.rating}
+                    </p>
+                )
+            }
             return (
+
               <Panel>
                   <Panel.Heading>Movie Detail</Panel.Heading>
                   <Panel.Body><Image className="image" src={currentMovie.imageUrl} thumbnail /></Panel.Body>
