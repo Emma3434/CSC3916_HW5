@@ -10,6 +10,8 @@ import {LinkContainer} from 'react-router-bootstrap';
 //require a callback function to be sent to MovieList to update the header subtitle
 
 class MovieList extends Component {
+
+
     constructor(props) {
         super(props);
         this.handleSelect = this.handleSelect.bind(this);
