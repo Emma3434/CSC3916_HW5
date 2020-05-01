@@ -47,10 +47,10 @@ class Movie extends Component {
                     <Panel.Body><Image className="image" src={currentMovie.ImageUrl} thumbnail /></Panel.Body>
                     <ListGroup>
                         <ListGroupItem>{currentMovie.title}</ListGroupItem>
-                        <ListGroupItem><ActorInfo Actors={currentMovie.Actors} /></ListGroupItem>
-                        <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
+                        <ListGroupItem><ActorInfo Actors={currentMovie.actors} /></ListGroupItem>
+                        <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.averageRating} </h4></ListGroupItem>
                     </ListGroup>
-                    <Panel.Body><ReviewInfo Reviews={currentMovie.Reviews} /></Panel.Body>
+                    <Panel.Body><ReviewInfo Reviews={currentMovie.reviews} /></Panel.Body>
                 </Panel>
             );
         };
