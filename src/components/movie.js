@@ -62,7 +62,8 @@ class Movie extends Component {
         const ReviewInfo = ({reviews}) => {
             return reviews.map((review, i) =>
                 <p key={i}>
-                    <b>{review.username}</b> {review.comment} &nbsp;&nbsp;&nbsp;
+                    <b>{review.username}</b> <i>commented</i>
+                    &nbsp;&nbsp;&nbsp; {review.comment} &nbsp;&nbsp;&nbsp;
                     <Glyphicon glyph={'star'} /> {review.rating}
                 </p>
             );
@@ -85,7 +86,7 @@ class Movie extends Component {
                             Comment
                         </Col>
                         <Col sm={9}>
-                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.comment} type="text" placeholder="Your Review..." />
+                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.comment} type="text" placeholder="Leave your comments here..." />
                         </Col>
                     </FormGroup>
 
@@ -115,11 +116,17 @@ class Movie extends Component {
                     <Panel.Heading key="movieDetailHeading">Movie Detail</Panel.Heading>
                     <Panel.Body key="movieImage"><Image className="image" src={currentMovie.imageUrl} thumbnail /></Panel.Body>
                     <ListGroup key="movieDetailList">
-                        <ListGroupItem>{currentMovie.title}</ListGroupItem>
-                        <ListGroupItem><ActorInfo actors={currentMovie.actors} /></ListGroupItem>
                         <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.averageRating} </h4></ListGroupItem>
+                        <ListGroupItem>{currentMovie.title}</ListGroupItem>
+                        <ListGroupItem>
+                            <h6>Leading Actors</h6>
+                            <ActorInfo actors={currentMovie.actors} />
+                        </ListGroupItem>
                     </ListGroup>
-                    <Panel.Body><ReviewInfo reviews={currentMovie.reviews} /></Panel.Body>
+                    <Panel.Body>
+                        <h6>Reviews</h6>
+                        <ReviewInfo reviews={currentMovie.reviews} />
+                    </Panel.Body>
                 </Panel>
             );
         };
