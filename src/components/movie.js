@@ -19,7 +19,7 @@ class Movie extends Component {
             details:{
                 title: this.props.selectedMovie.title,
                 username: localStorage.getItem("username"),
-                quote: '',
+                comment: '',
                 rating:0
             }
         };
@@ -80,7 +80,7 @@ class Movie extends Component {
                         </Col>
                     </FormGroup>
 
-                    <FormGroup controlId="quote">
+                    <FormGroup controlId="comment">
                         <Col componentClass={ControlLabel} sm={3}>
                             Comment
                         </Col>
@@ -89,11 +89,11 @@ class Movie extends Component {
                         </Col>
                     </FormGroup>
 
-                    <FormGroup controlId="movieTitle">
+                    <FormGroup controlId="title">
                         <FormControl type="hidden" value={currentMovie.title} onLoad={this.updateReviewDetails} />
                     </FormGroup>
 
-                    <FormGroup controlId="reviewer">
+                    <FormGroup controlId="username">
                         <FormControl type="hidden" value={localStorage.getItem("username")} onLoad={this.updateReviewDetails} />
                     </FormGroup>
 
