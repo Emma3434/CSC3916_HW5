@@ -8,10 +8,10 @@
 }
 
 .App-header {
-  background-color: #527670;
+  background-color: #6e434b;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: #ffd5dd;
 }
 
 .App-title {
@@ -25,6 +25,11 @@
 .form-horizontal {
   width: 40% !important;
   margin-left: 30%
+}
+
+.body
+{
+  background-color: #c8a9af;
 }
 
 @keyframes App-logo-spin {

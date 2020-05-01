@@ -75,7 +75,7 @@ class Movie extends Component {
                     <FormGroup controlId="rating" key="ratingFormGroup">
                         <h5>Rating (Please enter a number between 0 and 5)</h5>
                         <div>
-                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.rating} type="Number" />
+                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.rating} type="Number" min = "0" max = "5"/>
                         </div>
                     </FormGroup>
 
