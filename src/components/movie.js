@@ -73,7 +73,7 @@ class Movie extends Component {
             return (
                 <Form horizontal key="reviewForm">
                     <FormGroup controlId="rating" key="ratingFormGroup">
-                        <Col componentClass={ControlLabel} sm={3}>
+                        <Col componentClass={ControlLabel} sm={4}>
                             Rating (under 5)
                         </Col>
                         <Col sm={9}>
@@ -82,7 +82,7 @@ class Movie extends Component {
                     </FormGroup>
 
                     <FormGroup controlId="comment">
-                        <Col componentClass={ControlLabel} sm={3}>
+                        <Col componentClass={ControlLabel} sm={4}>
                             Comment
                         </Col>
                         <Col sm={9}>
@@ -99,7 +99,7 @@ class Movie extends Component {
                     </FormGroup>
 
                     <FormGroup>
-                        <Col smOffset={2} sm={10}>
+                        <Col smOffset={2} sm={9}>
                             <Button onClick={this.postReview}>Post Review</Button>
                         </Col>
                     </FormGroup>

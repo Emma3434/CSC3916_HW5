@@ -10,6 +10,8 @@ function postingReview(review){
 
 export function submitReview(review){
     const env = runtimeEnv();
+
+    // Chop the body up to pieces for saving
 	var formBody = [];
 	for(var property in review)
 	{
@@ -18,7 +20,8 @@ export function submitReview(review){
 		formBody.push(encodedKey + "=" + encodedValue);
 	}
 	formBody = formBody.join("&");
-	
+
+	// Post the content in the body from review post method
     return dispatch => {
         return fetch(`${env.REACT_APP_API_URL}/reviews`, {
             method: 'POST',
