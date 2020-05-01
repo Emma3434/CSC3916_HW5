@@ -10,7 +10,7 @@ import { submitReview } from "../actions/reviewActions";
 
 class Movie extends Component {
 
-	constructor(props) {
+    constructor(props) {
         super(props);
         this.updateReviewDetails = this.updateReviewDetails.bind(this);
         this.postReview = this.postReview.bind(this);
@@ -18,14 +18,14 @@ class Movie extends Component {
         this.state = {
             details:{
                 title: this.props.selectedMovie.title,
-				username: localStorage.getItem("username"),
-				comment: '',
-				rating:0
+                username: localStorage.getItem("username"),
+                quote: '',
+                rating:0
             }
         };
     }
 
-	updateReviewDetails(event){
+    updateReviewDetails(event){
         let updateReviewDetails = Object.assign({}, this.state.details);
 
         updateReviewDetails[event.target.id] = event.target.value;
@@ -34,16 +34,16 @@ class Movie extends Component {
         });
     }
 
-	postReview() {
+    postReview() {
         const {dispatch} = this.props;
         dispatch(submitReview(this.state.details))
-			.then(
-				()=>
-				{
-					this.props.history.push('/');
-				});
+            .then(
+                ()=>
+                {
+                    this.props.history.push('/');
+                });
     }
-	
+
     componentDidMount() {
         const {dispatch} = this.props;
         if (this.props.selectedMovie == null)
@@ -62,50 +62,50 @@ class Movie extends Component {
         const ReviewInfo = ({reviews}) => {
             return reviews.map((review, i) =>
                 <p key={i}>
-                <b>{review.reviewer}</b> {review.quote} &nbsp;&nbsp;&nbsp;
+                    <b>{review.username}</b> {review.comment} &nbsp;&nbsp;&nbsp;
                     <Glyphicon glyph={'star'} /> {review.rating}
                 </p>
             );
         }
-		
-		const ReviewForm = ({currentMovie}) => {
-			return (
-				<Form horizontal key="reviewForm">
-					<FormGroup controlId="rating" key="ratingFormGroup">
-						<Col componentClass={ControlLabel} sm={3}>
-							Rating (0-5)
-						</Col>
-						<Col sm={9}>
-							<FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.rating} type="Number" min="0" max="5" />
-						</Col>
-					</FormGroup>
 
-					<FormGroup controlId="Comments">
-						<Col componentClass={ControlLabel} sm={3}>
-							Comments
-						</Col>
-						<Col sm={9}>
-							<FormControl onChange={this.updateReviewDetails} value={this.state.details.comment} type="text" placeholder="Your Thoughts..." />
-						</Col>
-					</FormGroup>
-					
-					<FormGroup controlId="movieTitle">
-						<FormControl type="hidden" value={currentMovie.title} onLoad={this.updateReviewDetails} />
-					</FormGroup>
-					
-					<FormGroup controlId="reviewer">
-						<FormControl type="hidden" value={localStorage.getItem("username")} onLoad={this.updateReviewDetails} />
-					</FormGroup>
-					
-					<FormGroup>
-						<Col smOffset={2} sm={10}>
-							<Button onClick={this.postReview}>Post Review</Button>
-						</Col>
-					</FormGroup>
-				</Form>
-			);
-		}
-		
+        const ReviewForm = ({currentMovie}) => {
+            return (
+                <Form horizontal key="reviewForm">
+                    <FormGroup controlId="rating" key="ratingFormGroup">
+                        <Col componentClass={ControlLabel} sm={3}>
+                            Rating (under 5)
+                        </Col>
+                        <Col sm={9}>
+                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.rating} type="Number" min="0" max="5" />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup controlId="quote">
+                        <Col componentClass={ControlLabel} sm={3}>
+                            Comment
+                        </Col>
+                        <Col sm={9}>
+                            <FormControl key="ratingFormControl" onChange={this.updateReviewDetails} value={this.state.details.comment} type="text" placeholder="Your Review..." />
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup controlId="movieTitle">
+                        <FormControl type="hidden" value={currentMovie.title} onLoad={this.updateReviewDetails} />
+                    </FormGroup>
+
+                    <FormGroup controlId="reviewer">
+                        <FormControl type="hidden" value={localStorage.getItem("username")} onLoad={this.updateReviewDetails} />
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Col smOffset={2} sm={10}>
+                            <Button onClick={this.postReview}>Post Review</Button>
+                        </Col>
+                    </FormGroup>
+                </Form>
+            );
+        }
+
         const DetailInfo = ({currentMovie}) => {
             if (!currentMovie) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
@@ -117,17 +117,17 @@ class Movie extends Component {
                     <ListGroup key="movieDetailList">
                         <ListGroupItem>{currentMovie.title}</ListGroupItem>
                         <ListGroupItem><ActorInfo actors={currentMovie.actors} /></ListGroupItem>
-                        <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
+                        <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.averageRating} </h4></ListGroupItem>
                     </ListGroup>
-					<Panel.Body><ReviewInfo reviews={currentMovie.reviews} /></Panel.Body>
+                    <Panel.Body><ReviewInfo reviews={currentMovie.reviews} /></Panel.Body>
                 </Panel>
             );
         };
         return (
-			<div>
-				<DetailInfo currentMovie={this.props.selectedMovie} />
-				<ReviewForm currentMovie={this.props.selectedMovie} />
-			</div>
+            <div>
+                <DetailInfo currentMovie={this.props.selectedMovie} />
+                <ReviewForm currentMovie={this.props.selectedMovie} />
+            </div>
         );
     }
 }
