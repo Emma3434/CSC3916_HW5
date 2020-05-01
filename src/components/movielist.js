@@ -45,7 +45,7 @@ class MovieList extends Component {
                             </div>
                             <Carousel.Caption>
                                 <h3>{movie.title}</h3>
-                                <Glyphicon glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.releaseDate}
+                                <Glyphicon glyph={'star'} /> {movie.averageRating} &nbsp;&nbsp; {movie.year_released}
                             </Carousel.Caption>
                         </Carousel.Item>)}
                 </Carousel>)
